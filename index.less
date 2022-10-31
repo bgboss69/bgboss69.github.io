@@ -101,10 +101,68 @@ img{
 }
 
 .container{
-    .pic{
-        width:30vw ;
-        height: 30vw;
-        background-image:linear-gradient(white,transparent) ;
-        border-radius: 10px 10px 0 0;
+    position: relative;
+    
+    .box_3d{
+        transform-style: preserve-3d;
+        transition: all 1s;
+        animation: move 8s infinite ;
+
+        .pic{
+            width:30vw ;
+            height: 30vw;
+            background-image:linear-gradient(white,rgb(101, 101, 101)) ;
+            border-radius: 10px 10px 10px 10px;
+            position: absolute;
+            left: 35vw;
+
+            
+            img{
+                border-radius: 10px 10px 10px 10px;
+            }
+        }
+    
+
+    .front{
+        transform: translateZ(15vw);
+
     }
+    .left{
+        transform: rotateY(90deg) translateZ(15vw);
+    }
+    .right{
+        transform: rotateY(-90deg) translateZ(15vw);
+    }
+    .back{
+        transform: translateZ(-15vw);
+
+    }
+    // &:hover{
+    //     transform: translateX(0vw) rotateY(180deg)
+    // }
+    }
+
+}
+
+@keyframes move {
+    0%{
+
+        transform:translateX(0vw) rotateY(0deg);
+    }
+    25%{
+        transform:translateX(0vw) rotateY(90deg);
+        
+    }
+    50%{
+
+        transform: translateX(0vw) rotateY(180deg);
+
+    }
+    75%{
+        transform:  translateX(0vw) rotateY(270deg);
+    }
+    100%{
+        transform: translateX(0vw)rotateY(360deg);
+    }
+    
 }
