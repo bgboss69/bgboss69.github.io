@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/kaushanscript/v14/vm8vdRfvXFLG3OLnsO15WYS5DF7_.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v49/TK3_WkUHHAIjg75cFRf3bXL8LICs169vgUE.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kaushan Script', cursive;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cover {
+  object-fit: cover;
+}
+.none {
+  display: none;
+}
+body {
+  position: relative;
+}
+.container {
+  width: 100vw;
+}
+.container .profile {
+  position: absolute;
+  top: 0vw;
+  left: 50vw;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  height: 50vw;
+  width: 50vw;
+  background: url(AI210390.jpg);
+  background-size: cover;
+  border-radius: 5%;
+}
+.container .profile-thumb {
+  display: none;
+}
+.b1 {
+  padding-top: 50vw;
+}
+.b1 .shawdow_box {
+  padding: 5vw;
+}
+.b1 .shawdow_box .ab {
+  text-decoration: underline;
+  padding-bottom: 5vw;
+}
+.b1 .shawdow_box .first-block {
+  width: 40%;
+  display: inline-block;
+  float: left;
+  color: #000000;
+  font-weight: bold;
+}
+.b1 .shawdow_box .second-block {
+  width: 60%;
+  display: inline-block;
+  color: #000000;
+}
+.b1 .shawdow_box .my {
+  text-decoration: underline;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+}
+.b1 .shawdow_box p {
+  text-align: justify;
+}
+.box_3d {
+  padding-bottom: 5vw;
+  position: relative;
+}
+.box_3d:hover .pic {
+  animation-play-state: paused;
+}
+.box_3d .pic {
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.box_3d .pic img {
+  object-fit: cover;
+}
+.pic:nth-child(1) {
+  animation: show 8s 0s  linear  infinite;
+}
+.pic:nth-child(2) {
+  animation: show 8s 2s  linear  infinite;
+}
+.pic:nth-child(3) {
+  animation: show 8s 4s  linear infinite;
+}
+.pic:nth-child(4) {
+  animation: show 8s 6s  linear  infinite;
+}
+@keyframes show {
+  0%,
+  25% {
+    opacity: 1;
+  }
+  25%,
+  100% {
+    opacity: 0;
+  }
+}

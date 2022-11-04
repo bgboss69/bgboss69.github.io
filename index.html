@@ -6,17 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>profile</title>
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./mobile_index.css" media="screen and (max-width: 1200px)">
+  <link rel="stylesheet" href="./index.css" media="screen and (min-width: 1200px)">
 
 </head>
 
 <body>
   <div class="shinchan_TQ"></div>
-
-
   <div class="container">
-    <img src="./10.jpg" alt="" class="first">
-    <img src="./10.jpg" alt="" class="last">
+    <img src="./10.jpg" alt="" class="first none">
+    <img src="./10.jpg" alt="" class="last none">
     <div class="profile"></div>
     <div class="profile-thumb">
       <h1><span>-CHING KAI YUAN-</span></h1>
@@ -25,55 +24,49 @@
     </div>
   </div>
 
-  <div class="container" style=" background-image: url(./11.jpg); background-size: cover;">
+  <div class="container b1">
     <div class="shinchan_play"></div>
     <div class="shawdow_box">
-      <h1 style="color:rgb(0, 0, 0);text-decoration: underline; margin-bottom: 20px;"> About Me</h1>
-        <ul class="info">
-          <li><span class="first-block">Full Name:</span><span class="second-block">CHING KAI YUAN</span></li>
-          <li><span class="first-block">Matric NO:</span><span class="second-block">AI210390</span></li>
-          <li><span class="first-block">Email:</span><span class="second-block">ai210390@siswa.uthm.edu.my</span></li>
-          <li><span class="first-block">Course:</span><span class="second-block">Bachelor of Computer Science (Web
-              Technology) with Honours</span></li>
-        </ul> 
+      <h1 class="ab"> About Me</h1>
+      <ul class="info">
+        <li><span class="first-block">Full Name:</span><span class="second-block">CHING KAI YUAN</span></li>
+        <li><span class="first-block">Matric NO:</span><span class="second-block">AI210390</span></li>
+        <li><span class="first-block">Email:</span><span class="second-block">ai210390@siswa.uthm.edu.my</span></li>
+        <li><span class="first-block">Course:</span><span class="second-block">Bachelor of Computer Science (Web
+            Technology) with Honours</span></li>
+      </ul>
 
-        <h2 style="color:rgb(0, 0, 0);text-decoration: underline; margin-bottom: 20px; margin-top: 20px;">My experience at UTHM</h2>
-        <p>
-          I am a student at UTHM for the first time at the age of 20 (2021) doing a Honours Bachelor of Computer Science (Network Technology) at UTHM parit raja. It was one of the best things I've ever done, meeting new people, making memories and getting a degree was a huge achievement.
+      <h2 class="my">My experience at UTHM</h2>
+      <p>
+        I am a student at UTHM for the first time at the age of 20 (2021) doing a Honours Bachelor of Computer Science
+        (Network Technology) at UTHM parit raja. It was one of the best things I've ever done, meeting new people,
+        making memories and getting a degree was a huge achievement.
 
-          I feel very comfortable in Y1S1, because of the online class, although I can only meet friends online, they are all very good people. At Y1S2 I first met my friends at perwira. We live together, play together, study together, that's the best life experience in college
-        </p>
-        <!-- <p>My name is ching kai yuan from Perak and I am pursuing a Bachelor of Computer Science (Web Technology) with
-          Honours from UTHM University.</p>
-        <p>Universiti Tun Hussein Onn Malaysia is a public university in Batu Pahat, Johor, Malaysia. </p>
-        <p>Rank of Universiti Tun Hussein Onn Malaysia in the Asia University Rankings 2022 is 247th.</p>
-        <p>In my opinion, The most special attraction place of UTHM is Tunku Tun Aminah Library</p>
-        <p>The Tunku Tun Aminah Library is one of the largest academic libraries in Malaysia. The building has four
-          floors, with 16,000 square meters of total floor area. </p>
-        <p> It can accommodate as many as 300,000 books and 3,000 users.</p> -->
+        I feel very comfortable in Y1S1, because of the online class, although I can only meet friends online, they are
+        all very good people. At Y1S2 I first met my friends at perwira. We live together, play together, study
+        together, that's the best life experience in college
+      </p>
 
     </div>
   </div>
-  <div class="container" >
+  <div class="container">
 
-    <div class="box_3d" style="">
-      <div class="pic front" style="top: 10vh ;">
+    <div class="box_3d">
+      <div class="pic front">
         <img src="./7.jpg" alt="">
       </div>
-      <div class="pic left" style="top: 10vh;">
+      <div class="pic left">
         <img src="./8.jpg" alt="">
       </div>
-      <div class="pic right" style="top: 10vh;">
-
+      <div class="pic right">
         <img src="./1.jpg" alt="">
-
       </div>
-      <div class="pic back" style="top: 10vh;">
+      <div class="pic back">
         <img src="./library_uthm_colored-7c617da0.jpeg" alt="">
       </div>
     </div>
-    <img src="./b1.png" alt="" style="object-fit: cover;" >
-    <h1 style="width: 100px; color: blue; text-decoration: underline; position: absolute; top: 0; left: 0; z-index: 10;background-color: white; display: block;">Picture</h1>
+    <img src="./b1.png" alt="" class="cover none">
+    <h1 class="pics none">Picture</h1>
   </div>
 
   <!-- <div class="circle">
@@ -106,20 +99,14 @@
               </p>
           </div>
         </div> -->
-
-
-
-
-
-
-
+  <!-- 
   <script>
     const text = document.querySelector('.text p');
     text.innerHTML = text.innerText.split("").map(
       (char, i) =>
         `<span style="transform:rotate(${i * 7}deg">${char}</span>`
     ).join("")
-  </script>
+  </script> -->
 </body>
 
 </html>

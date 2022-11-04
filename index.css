@@ -25,6 +25,9 @@ img {
   height: 100%;
   object-fit: contain;
 }
+.cover {
+  object-fit: cover;
+}
 body {
   position: relative;
 }
@@ -105,7 +108,7 @@ body {
   height: 200px;
   width: 200px;
   background: url(AI210390.jpg);
-  background-size: cover  ;
+  background-size: cover;
   border-radius: 50%;
 }
 .container .profile-thumb {
@@ -137,53 +140,69 @@ body {
 .container .profile-thumb h3 span {
   font-size: 16px;
 }
-.container .shawdow_box {
+.b1 {
+  background-image: url(11.jpg);
+  background-size: cover;
+}
+.b1 .shawdow_box {
   width: 50%;
   height: 100%;
   float: right;
   background: rgba(255, 255, 255, 0.8);
   padding: 20px;
 }
-.container .shawdow_box ul li {
+.b1 .shawdow_box .ab {
+  color: #000000;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+.b1 .shawdow_box ul li {
   font-size: 25px;
 }
-.container .shawdow_box ul li .first-block {
+.b1 .shawdow_box ul li .first-block {
   width: 40%;
   display: inline-block;
   float: left;
   color: #000000;
   font-weight: bold;
 }
-.container .shawdow_box ul li .second-block {
+.b1 .shawdow_box ul li .second-block {
   width: 60%;
   display: inline-block;
   color: #000000;
 }
-.container .shawdow_box h2 {
+.b1 .shawdow_box .my {
+  color: #000000;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.b1 .shawdow_box h2 {
   font-weight: 400;
   line-height: 1.1;
   margin: 0 0 20px 0;
 }
-.container .shawdow_box p {
+.b1 .shawdow_box p {
   color: #000;
   display: block;
   margin: 0 0 10px;
   font-weight: 400;
   line-height: 1.7;
   font-size: 20px;
+  text-align: justify;
 }
 .container {
   position: relative;
 }
 .container .box_3d {
   transform-style: preserve-3d;
-  animation: move 8s infinite ;
+  animation: move 8s infinite;
 }
 .container .box_3d:hover {
   animation-play-state: paused;
 }
 .container .box_3d .pic {
-  width: 30vw ;
+  width: 30vw;
   height: 30vw;
   background-image: linear-gradient(white, #656565);
   border-radius: 10px 10px 10px 10px;
@@ -195,19 +214,34 @@ body {
   border-radius: 10px 10px 10px 10px;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .container .box_3d .front {
   transform: translateZ(15vw);
+  top: 10vh;
 }
 .container .box_3d .left {
   transform: rotateY(90deg) translateZ(15vw);
+  top: 10vh;
 }
 .container .box_3d .right {
   transform: rotateY(-90deg) translateZ(15vw);
+  top: 10vh;
 }
 .container .box_3d .back {
   transform: translateZ(-15vw);
+  top: 10vh;
+}
+.container .pics {
+  width: 100px;
+  color: blue;
+  text-decoration: underline;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  display: block;
 }
 @keyframes move {
   0% {
@@ -282,7 +316,7 @@ body {
   filter: drop-shadow(0 0 50px #fff);
   opacity: 0;
   transition: opacity 3s,
-    animation 1s;
+        animation 1s;
 }
 .text span {
   position: absolute;

@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kaushan Script', cursive;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cover{
+    object-fit: cover;
+}
+
+.none{
+    display: none;
+}
+
+body {
+    position: relative;
+}
+
+
+
+.container{
+    width: 100vw;
+    .profile{
+        position: absolute;
+        top: 0vw;
+        left: 50vw;
+        transform: translate(-50%,0);
+        z-index: 1;
+        height: 50vw;
+        width: 50vw;
+        background: url(./AI210390.jpg);
+        background-size: cover;
+        border-radius: 5%;
+
+    }
+
+    .profile-thumb{
+
+        display: none;
+    //     position: absolute;
+    //     top: 0vw;
+    //     left: 50vw;
+    //     transform: translate(-50%,0);
+    //     z-index: 2;
+    //     width: 50vw;
+    //     height: 50vw;
+    //     opacity: 0;
+    //     border-radius: 5%;
+    //     background:white;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: space-evenly;
+    //     padding: 10px;
+    //     animation:appear 4s alternate infinite;
+        
+
+    //     h1,h2{
+    //         font-size: 18px;
+    //     }
+    //     h3{
+    //         font-size: 18px;
+    //     }
+
+    }
+
+}
+
+// @keyframes appear {
+//         0%,50%{
+//             opacity: 1;
+//         }
+//         50%,100%{
+//             opacity: 0;
+//         }
+    
+//     }
+
+.b1{
+    padding-top: 50vw;
+    .shawdow_box{
+        padding: 5vw;
+
+    .ab{
+        text-decoration: underline;
+        padding-bottom: 5vw;
+    }
+
+    .first-block {
+        width: 40%;
+        display: inline-block;
+        float: left;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+    }
+    
+    .second-block {
+        width: 60%;
+        display: inline-block;
+        color: rgb(0, 0, 0)
+    }
+    
+    .my{
+        text-decoration: underline;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+    
+    }
+
+    p{
+        text-align: justify;
+     }
+    }
+}
+
+
+.box_3d{
+    padding-bottom: 5vw;
+    position: relative;
+    &:hover .pic{
+        animation-play-state: paused;
+    }
+
+    .pic{
+        width: 100vw;
+        height: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        
+        img{
+            object-fit: cover;
+        }
+    }
+}
+.pic:nth-child(1){
+    animation: show 8s 0s  linear  infinite;
+    
+}
+.pic:nth-child(2){
+    animation: show 8s 2s  linear  infinite;
+}
+.pic:nth-child(3){
+    animation: show 8s 4s  linear infinite;
+}
+.pic:nth-child(4){
+    animation: show 8s 6s  linear  infinite;
+}
+
+
+@keyframes show {   
+    0%,25%{
+        opacity: 1;
+    }
+    25%,100%{
+        opacity: 0;
+    }
+
+}
