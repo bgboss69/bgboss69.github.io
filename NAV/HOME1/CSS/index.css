@@ -91,15 +91,32 @@ img {
   position: relative;
   background-color: black;
   height: 90vh;
+  /* Fading animation */
 }
-.main .page1 .container {
+.main .page1 .slideshow-container {
   padding-left: 15vw;
   padding-right: 15vw;
   height: 90vh;
   background-image: linear-gradient(to bottom right, black, grey);
 }
-.main .page1 .container img {
+.main .page1 .slideshow-container .mySlides {
   height: 100%;
+  display: none;
+}
+.main .page1 .slideshow-container .mySlides img {
+  height: 100%;
+}
+.main .page1 .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .main .page1 .button-left {
   position: absolute;

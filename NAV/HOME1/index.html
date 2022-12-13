@@ -53,16 +53,36 @@
                 <button class="button-left" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="button-right" onclick="plusDivs(1)">&#10095;</button>
             </div>
-            <div class="container">
-                <img class="mySlides" src="./IMAGE/s2.jpg">
-                <img class="mySlides" src="./IMAGE/s3.jpg">
-                <img class="mySlides" src="./IMAGE/s4.jpg">
-                <img class="mySlides" src="./IMAGE/s6.jpg">
-                <img class="mySlides" src="./IMAGE/s7.jpg">
-                <img class="mySlides" src="./IMAGE/s8.jpg">
-                <img class="mySlides" src="./IMAGE/s9.jpg">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <img src="./IMAGE/s2.jpg">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="./IMAGE/s3.jpg">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="./IMAGE/s4.jpg">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="./IMAGE/s6.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./IMAGE/s7.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./IMAGE/s8.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./IMAGE/s9.jpg">
+                </div>
             </div>
-        
 
         </div>
 
@@ -227,23 +247,54 @@
     </div>
 
     <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
         
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 4000); // Change image every 2 seconds
+
+        }
+
         function plusDivs(n) {
-          showDivs(slideIndex += n);
-        }
-        
-        function showDivs(n) {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          if (n > x.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = x.length}
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
+          let slides = document.getElementsByClassName("mySlides");
+          slideIndex += n;
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
           }
-          x[slideIndex-1].style.display = "block";  
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          slides[slideIndex-1].style.display = "block";  
         }
+
+
+        
+
+        // var slideIndex = 1;
+        // showDivs(slideIndex);
+        
+
+
+
+        // function showDivs(n) {
+        //   var i;
+        //   var x = document.getElementsByClassName("mySlides");
+        //   if (n > x.length) {slideIndex = 1}
+        //   if (n < 1) {slideIndex = x.length}
+        //   for (i = 0; i < x.length; i++) {
+        //     x[i].style.display = "none";  
+        //   }
+        //   x[slideIndex-1].style.display = "block";  
+        // }
+
         </script>
 </body>
 </html>
