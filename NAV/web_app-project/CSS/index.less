@@ -1,0 +1,109 @@
+// @media screen and (max-width: 768px) {
+//     [data-aos-delay] {
+//       transition-delay: 0 !important;
+//     }
+//   }
+
+
+// /*--------------------------------------------------------------
+// # Header
+// --------------------------------------------------------------*/
+// .header {
+//     background: #fff;
+//     transition: all 0.5s;
+//     z-index: 997;
+//     height: 90px;
+//     border-bottom: 1px solid #fff;
+//   }
+  
+//   @media (max-width: 575px) {
+//     .header {
+//       height: 70px;
+//     }
+//   }
+  
+//   .header.sticked {
+//     border-color: #fff;
+//     border-color: #eee;
+//   }
+  
+//   .header .logo img {
+//     max-height: 40px;
+//     margin-right: 6px;
+//   }
+  
+//   .header .logo h1 {
+//     font-size: 28px;
+//     font-weight: 700;
+//     color: #000;
+//     margin: 0;
+//     font-family: var(--font-secondary);
+//   }
+  
+//   .header .logo h1 span {
+//     color: var(--color-primary);
+//   }
+  
+//   .header .btn-book-a-table,
+//   .header .btn-book-a-table:focus {
+//     font-size: 14px;
+//     color: #fff;
+//     background: var(--color-primary);
+//     padding: 8px 20px;
+//     margin-left: 30px;
+//     border-radius: 50px;
+//     transition: 0.3s;
+//   }
+  
+//   .header .btn-book-a-table:hover,
+//   .header .btn-book-a-table:focus:hover {
+//     color: #fff;
+//     background: rgba(206, 18, 18, 0.8);
+//   }
+  
+//   section {
+//     scroll-margin-top: 90px;
+//   }
+  
+   .page1{
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    padding-top:10vh;
+    background: linear-gradient( 320deg, green 50%, orange 50%);
+    position: relative;
+    overflow: hidden;
+    .item1{
+        width: 500px;
+        position: absolute;
+        top: 100px;
+        right: 300px;
+        animation: a 1s;
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    .item2{
+        width: 500px;
+        position: absolute;
+        top: 250px;
+        right: 450px;
+        animation: a 1.5s;
+
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    }
+
+    @keyframes a {
+        from{
+            transform: translateX(1000px);
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+    

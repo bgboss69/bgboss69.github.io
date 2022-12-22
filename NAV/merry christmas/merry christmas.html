@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+</head>
+<script src="./firefly-v0.1.js"></script>
+<script> window.onload = function() { firefly("test", 100, "medium", "ef98af"); }; </script> 
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow: hidden;
+        }
+        .box{
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img{
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50% ,0);
+        }
+
+        .open{
+            transform-origin: center;
+            transition: all 1s;
+            z-index: 1;
+        }
+
+        .open:hover{
+            transform: translateX(100vw);
+        }
+
+        .snowman{
+            transform-origin: center;
+            transition: all 1s;
+            z-index: 0.5;
+        }
+
+        .snowman:hover .open{
+            transform: translateX(-100vw);
+        }
+
+
+    </style>
+<body>
+    <div class="box" id="test">
+        <img class="open" src="./open.png" alt="">
+        <img class="snowman" src="./38fad33e8b9a061e138fd7af8b9e3956.gif" alt="">
+    </div>
+
+    <script>
+        var y = document.querySelector("body");
+
+        let a = new Audio('./We Wish You a Merry Christmas with Lyrics  Christmas Carol & Song.mp3')
+        let n=0;
+
+
+        y.onclick=function myFunction()
+        { 
+            n++
+            if(n%2){
+                a.play();
+            }
+            else{
+                a.pause();
+            }
+        }
+
+    </script>
+</body>
+</html>

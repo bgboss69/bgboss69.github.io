@@ -1,0 +1,39 @@
+.page1 {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  padding-top: 10vh;
+  background: linear-gradient(320deg, green 50%, orange 50%);
+  position: relative;
+  overflow: hidden;
+}
+.page1 .item1 {
+  width: 500px;
+  position: absolute;
+  top: 100px;
+  right: 300px;
+  animation: a 1s;
+}
+.page1 .item1 img {
+  width: 100%;
+  object-fit: contain;
+}
+.page1 .item2 {
+  width: 500px;
+  position: absolute;
+  top: 250px;
+  right: 450px;
+  animation: a 1.5s;
+}
+.page1 .item2 img {
+  width: 100%;
+  object-fit: contain;
+}
+@keyframes a {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

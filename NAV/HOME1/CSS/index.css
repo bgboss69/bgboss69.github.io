@@ -253,6 +253,17 @@ img {
   width: 100%;
   border-radius: 50%;
 }
+.main .page3 .bottom .B_box .box .circle img:hover {
+  animation: spin 5s;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .main .page3 .bottom .B_box .box .detail {
   width: 20vw ;
   height: 10vh;

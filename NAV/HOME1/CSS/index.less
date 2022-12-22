@@ -271,15 +271,27 @@ img{
                     display: flex;
                     flex-direction: column;
                     .circle{
-                    margin-bottom: 10vh;
-                    height: 20vw;
-                    width: 20vw ;
-                    border-radius: 50%;
-                    img{
-                      width: 100%;
+                      margin-bottom: 10vh;
+                      height: 20vw;
+                      width: 20vw ;
                       border-radius: 50%;
-                    }
 
+                      img{
+                        width: 100%;
+                        border-radius: 50%;
+                        &:hover{
+                          animation: spin 5s;
+                        }
+
+                        @keyframes spin {
+                          0%{
+                            transform: rotate(0deg);
+                          }
+                          100%{
+                            transform: rotate(360deg);
+                          }
+                        }
+                      }
                     }
                     .detail{
                         width: 20vw ;
@@ -292,11 +304,12 @@ img{
                         a{
                           text-decoration: none;
                         }
-                        
+                      
                     }
                 }
             }
         }
+
     }
     
     
