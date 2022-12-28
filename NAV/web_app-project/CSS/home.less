@@ -19,7 +19,7 @@ body{
 
     .title{
         z-index: 2;
-        position: absolute;
+        position: relative;
         top: (100/1536)*100vw;
         left:(0/1536)*100vw;
         height: (500/1536)*100vw;
@@ -27,6 +27,7 @@ body{
         background: linear-gradient(to right,#CC3636 ,transparent) ;
         border-radius:0 50% 50% 0 ; 
         animation: b 1s;
+       
         p{
             line-height: (500/1536)*100vw;
             color: #FFE9A0;
@@ -34,6 +35,15 @@ body{
             text-align: center;
             font-size: 100px;
             font-weight: bold;
+            animation: c 5s;
+        }
+        img{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0,-50%);
+            padding: auto 0;
+            width: 100%;
             animation: c 5s;
         }
 
@@ -115,9 +125,41 @@ body{
                     object-fit: contain;
                 }
             }
-        }
+            .item3{
+                position: absolute;
+                top: (200/1536)*100vw;
+                right: (350/1536)*100vw;
+                width: (600/1536)*100vw;
+                width: 40vw;
+                height: 40vh;
+                background-color: rgba(240, 248, 255, 0.3);
+                animation: a 1.5s;
+                overflow: hidden;
+                    .mySlides {
+                        width: 100%;
+                        display: none;
+                        overflow: hidden;
+                      img{
+                        width: 100%;
+                        object-fit: contain;
+                      }
+                    }
+              
+            }
+                  
+                  /* Fading animation */
+                  .fade {
+                    animation-name: fade;
+                    animation-duration: 1.5s;
+                  }
+                  
+                  @keyframes fade {
+                    from {opacity: .4} 
+                    to {opacity: 1}
+                  }
 
     }
+}       
 
     @keyframes a {
         from{
@@ -141,6 +183,24 @@ body{
         }
         to{
             opacity: 1;
+        }
+    }
+
+    @keyframes d {
+        from{
+            transform: translateY(-1000px);
+        }
+        to{
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes e {
+        from{
+            transform: translateY(1000px);
+        }
+        to{
+            transform: translateY(0);
         }
     }
     // @keyframes d {

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./CSS/home.css">
+</head>
+<body>
+    <div class="page1">
+        <div class="title">
+            <img src="./IMAGE/logo.png" alt="">
+        </div>
+        <div class="btn"><a href="./index.html">Learn more</a></div>
+        <div class="left"></div>
+        <div class="right">
+            <div class="item1">
+              <img src="./IMAGE/sandwich1.png" alt="">
+            </div>
+            <div class="item2">
+              <img src="./IMAGE/sandwich2.png" alt="">
+            </div>
+            <!-- <div class="item3">
+                <div class="mySlides fade">
+                    <img src="./IMAGE/sandwich1.jpg">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="./IMAGE/sandwich6.jpg">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="./IMAGE/sandwich3.jpg">
+                </div>
+                
+                <div class="mySlides fade">
+                    <img src="./IMAGE/sandwich4.jpg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./IMAGE/sandwich5.jpg">
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 4000); // Change image every 2 seconds
+
+        }
+
+        function plusDivs(n) {
+          let slides = document.getElementsByClassName("mySlides");
+          slideIndex += n;
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          slides[slideIndex-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>

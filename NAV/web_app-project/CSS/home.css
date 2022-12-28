@@ -24,7 +24,7 @@ body {
 }
 .page1 .title {
   z-index: 2;
-  position: absolute;
+  position: relative;
   top: 6.51041667vw;
   left: 0vw;
   height: 32.55208333vw;
@@ -40,6 +40,15 @@ body {
   text-align: center;
   font-size: 100px;
   font-weight: bold;
+  animation: c 5s;
+}
+.page1 .title img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  padding: auto 0;
+  width: 100%;
   animation: c 5s;
 }
 .page1 .btn {
@@ -85,6 +94,7 @@ body {
   width: 80vw;
   height: 100vh;
   background: linear-gradient(320deg, #367E18 50%, #F57328 50%);
+  /* Fading animation */
 }
 .page1 .right .item1 {
   position: absolute;
@@ -114,6 +124,38 @@ body {
   width: 100%;
   object-fit: contain;
 }
+.page1 .right .item3 {
+  position: absolute;
+  top: 13.02083333vw;
+  right: 22.78645833vw;
+  width: 39.0625vw;
+  width: 40vw;
+  height: 40vh;
+  background-color: rgba(240, 248, 255, 0.3);
+  animation: a 1.5s;
+  overflow: hidden;
+}
+.page1 .right .item3 .mySlides {
+  width: 100%;
+  display: none;
+  overflow: hidden;
+}
+.page1 .right .item3 .mySlides img {
+  width: 100%;
+  object-fit: contain;
+}
+.page1 .right .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes a {
   from {
     transform: translateX(1000px);
@@ -136,6 +178,22 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes d {
+  from {
+    transform: translateY(-1000px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes e {
+  from {
+    transform: translateY(1000px);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 @keyframes tinRightOut {
