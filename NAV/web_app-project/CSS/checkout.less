@@ -152,7 +152,7 @@ a{
 
     .right{
         padding:0 30px;
-        overflow: scroll;
+        overflow: hidden;
         height: 100%;
         width: 25vw;
         background-color:#455849;
@@ -161,7 +161,37 @@ a{
         justify-content: center;
         align-items: center;
         .box{
-            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            .lt{
+                margin: 0;
+                padding: 0;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                
+
+                img{
+                   
+                   width: 100%; ;
+                }
+            }
+            .rt{
+                margin: 0;
+                padding: 10px;
+                width: 60%;
+                height: 100px;
+
+                p{
+                    width: 100%;
+                    text-align: left;
+                    color: white;
+                }
+            }
         }
 
         .flex1{

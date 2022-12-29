@@ -135,7 +135,7 @@ a {
 }
 .main .right {
   padding: 0 30px;
-  overflow: scroll;
+  overflow: hidden;
   height: 100%;
   width: 25vw;
   background-color: #455849;
@@ -143,6 +143,35 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.main .right .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.main .right .box .lt {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.main .right .box .lt img {
+  width: 100%;
+}
+.main .right .box .rt {
+  margin: 0;
+  padding: 10px;
+  width: 60%;
+  height: 100px;
+}
+.main .right .box .rt p {
+  width: 100%;
+  text-align: left;
+  color: white;
 }
 .main .right .flex1 {
   height: 50px;
