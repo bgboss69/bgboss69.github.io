@@ -17,6 +17,7 @@ session_start();
 
 			//read from database
 			$query = "select * from users where user_name = '$user_name' limit 1";
+			// get the data from database same as $query
 			$result = mysqli_query($con, $query);
 
 			if($result)
@@ -27,8 +28,9 @@ session_start();
 					$user_data = mysqli_fetch_assoc($result);
 					
 					if($user_data['password'] === $password)
-					{
-
+					{	
+						// $_SESSION['user_id'] is global variable
+						// so in index page can call it 
 						$_SESSION['user_id'] = $user_data['user_id'];
 						header("Location: index.php");
 						die;

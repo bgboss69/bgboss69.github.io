@@ -14,11 +14,16 @@ session_start();
 		//  input name is user_name so $_POST['user_name'] to global variable $user_name
 		$user_name = $_POST['user_name'];
 		$password = $_POST['password'];
-
+		// !is_numeric($user_name) mean not a number of username
+		// !empty($user_name) mean not empty of username
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
 		{
-
 			//save to database
+			// insert a data by formula
+			// users () is user table in created database in xampp
+			//$query = "insert into users () values ()";
+			// '$password' need ' ' because it is text		
+			
 			$user_id = random_num(20);
 			$query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
 
