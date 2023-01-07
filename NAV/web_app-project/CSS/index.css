@@ -95,39 +95,31 @@ a {
   margin-bottom: 20px;
   border-radius: 20px;
 }
-.main .product .item form {
-  padding: 20px;
-  width: 350px;
-  height: 350px;
-}
-.main .product .item form:hover img {
-  transform: scale(1.2, 1.2) rotate(5deg);
-}
-.main .product .item form .top {
+.main .product .item .top {
   width: 310px;
   height: 50%;
   overflow: hidden;
 }
-.main .product .item form .top img {
+.main .product .item .top img {
   height: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px 0 20px 0 ;
 }
-.main .product .item form .middle {
+.main .product .item .middle {
   width: 310px;
   height: 35%;
   overflow: hidden;
 }
-.main .product .item form .bottom {
+.main .product .item .bottom {
   width: 310px;
   height: 15%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main .product .item form .bottom .right {
+.main .product .item .bottom .right {
   margin-right: 10px;
 }
 /*==footer==*/
