@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./css/faq.css" />
+    <link rel="stylesheet" href="./css/feedback.css" />
     <script src="https://kit.fontawesome.com/4383c4d46f.js" crossorigin="anonymous"></script>
     <title>FAQ</title>
   </head>
@@ -39,10 +39,63 @@
               </div>
       </div>
   </div>
-  <div class="main">
+
+
+        <div class="main">
     
-  </div>
-<hr>
+             <!-- Modal -->
+
+            <div class="feedback_container">
+                <form action="" method="POST">                     
+                    <h4 class="title_feedback"><label for="Rate">Please Rate Our Website</label></h4>
+                    <div class="radio radio1">
+                        <div class="smiley">
+                            <input type="radio" name="Rate" id="Rate" value="Navigation Experience">
+                            <span class="open"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184410/dead_tminl7.png" /></span>
+                            <span class="close"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184409/dead-active_gcseca.png" /></span>
+                        </div>
+                        <div class="smiley">
+                            <input type="radio" name="Rate" id="Rate" value="Navigation Experience">
+                            <span class="open"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184410/sad_il7kmb.png" /></span>
+                            <span class="close"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184410/sad-active_rhibzn.png" /></span>
+                        </div>
+                        <div class="smiley">
+                            <input type="radio" name="Rate" id="Rate" value="Navigation Experience">
+                            <span class="open"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184410/sceptic_we1bxv.png" /></span>
+                            <span class="close"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184410/sceptic-active_kez7sa.png" /></span>
+                        </div>
+                        <div class="smiley">
+                            <input type="radio" name="Rate" id="Rate" value="Navigation Experience">
+                            <span class="open"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184409/more-happy_f53bgi.png" /></span>
+                            <span class="close"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184409/more-happy-active_d2hget.png" /></span>
+                        </div>
+                        <div class="smiley">
+                            <input type="radio" name="Rate" id="Rate" value="Navigation Experience">
+                            <span class="open"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184409/happy_kakekm.png" /></span>
+                            <span class="close"><img src="http://res.cloudinary.com/dxssokt4h/image/upload/v1507184409/happy-active_fs6ztw.png" /></span>
+                        </div>
+                     </div>
+
+                    <h4 class="title_feedback"><label for="Better">What Could Be Better?</label></h4>
+                    <div class="radio radio2">
+                        <input type="radio" name="Better" id="Better" value="Navigation Experience">Navigation Experience
+                        <input type="radio" name="Better" id="Better" value="Overall Experience">Overall Experience
+                        <input type="radio" name="Better" id="Better" value="Website Look & Feel">Website Look & Feel
+                        <input type="radio" name="Better" id="Better" value="Information Availablity">Information Availablity
+                    </div>
+                            <div class="comment_div">
+                        <h4 class="title_feedback">Comments / Suggestions?</h4>
+                        <textarea rows="8"></textarea>
+                    </div>
+                    
+                    <div class="submit_btn">
+
+                        <a href="">Submit</a>
+                    </div>
+                </form> 
+            </div>    
+        </div>
+    <hr>
 
   <div class="footer">
     <div class="left">
@@ -76,13 +129,23 @@
 </div>
 
     <script>
-      const toggles = document.querySelectorAll('.faq-toggle')
 
-      toggles.forEach(toggle => {
-          toggle.addEventListener('click', () => {
-              toggle.parentNode.classList.toggle('active')
-          })
-      })
+
+      $(document).ready(function() {
+					
+					
+    $(".question a").click(function() {
+        $(this).toggleClass("active_qa");
+    });
+        
+        $(".smiley").click(function() {
+            $(this).toggleClass("test");                       
+            $(this).siblings().removeClass("test");
+            
+            
+    });
+    
+    });
 
     </script>
   </body>

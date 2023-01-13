@@ -132,14 +132,17 @@ body {
   background-color: rgba(240, 248, 255, 0.3);
   animation: a 1.5s;
   overflow: hidden;
+  border-radius: 50px;
 }
 .page1 .right .item3 .mySlides {
   width: 100%;
   display: none;
   overflow: hidden;
+  border-radius: 50px;
 }
 .page1 .right .item3 .mySlides img {
   width: 100%;
+  border-radius: 50px;
 }
 .page1 .right .fade {
   animation-name: fade;

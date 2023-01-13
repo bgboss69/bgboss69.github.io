@@ -5,12 +5,49 @@ session_start(); // call $_SESION; ??
 	// import php file
 	include("connection.php"); 
 	include("functions.php");
-  include("component.php");
+  // require_once ('./php/CreateDb.php');
+  // include ('component.php');
+  require_once ('component.php');
+  require_once ('CreateDb.php');
+$user_data = check_login($con);
 
-	$user_data = check_login($con);
+
+// create instance of Createdb class
+$database = new CreateDb("Productdb", "Producttb");
+
+if (isset($_POST['add'])){
+    /// print_r($_POST['product_id']);
+    //output: Array([0]=> Array{[product_id]}=>2) 
+    if(isset($_SESSION['cart'])){
+
+        $item_array_id = array_column($_SESSION['cart'], "product_id");
+        if(in_array($_POST['product_id'], $item_array_id)){
+            echo "<script>alert('Product is already added in the cart..!')</script>";
+            echo "<script>window.location = 'index.php'</script>";
+        }else{
+
+            $count = count($_SESSION['cart']);
+            $item_array = array(
+                'product_id' => $_POST['product_id']
+            );
+
+            $_SESSION['cart'][$count] = $item_array;
+        }
+
+    }else{
+
+        $item_array = array(
+                'product_id' => $_POST['product_id']
+        );
+
+        // Create new session variable
+        $_SESSION['cart'][0] = $item_array;
+        print_r($_SESSION['cart']);
+    }
+}
+
 
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -24,6 +61,26 @@ session_start(); // call $_SESION; ??
     <script src="https://kit.fontawesome.com/a627fa96ad.js" crossorigin="anonymous"></script>
 
   </head> 
+
+  <style>
+    .cart{
+      position: relative;
+    }
+    .header .right .cart span {
+      position: absolute;
+      top: 0;
+      right: -10px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      color: white;
+      font-size: 10px;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 50%;
+    }
+  </style>
   <body>
   <!-- head -->
   <div class="header">
@@ -31,14 +88,26 @@ session_start(); // call $_SESION; ??
       <a href="./cover page.html"><img src="./IMAGE/logo.png" alt=""></a>
     </div>
     <div class="middle">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" role="search" action="search.php" method ="POST">
+        <input class="form-control me-2" type="text" name="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" name="submit-search">Search</button>
       </form>
     </div>
     <div class="right">
         <a href="./logout.php" style="border:3px solid white; border-radius:20px; padding:0 10px; margin: 5px 0 " ><i class="fa-solid fa-user"></i> &nbsp;<?php echo $user_data['user_name']; ?> &nbsp;<i class="fa-solid fa-right-from-bracket"></i></a>
-        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="./cart.php" class="cart"><i class="fa-solid fa-cart-shopping"></i>
+        
+        <?php
+
+          if (isset($_SESSION['cart'])){
+              $count = count($_SESSION['cart']);
+              echo "<span>$count</span>";
+          }else{
+              
+          }
+
+        ?>
+        </a>
       </div>
 
   </div>
@@ -63,24 +132,30 @@ session_start(); // call $_SESION; ??
       <h1>Sandwich</h1>
       <div class="product">
       <?php
-                // $result = $database->getData();
-                // while ($row = mysqli_fetch_assoc($result)){
-                //   component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
-                //}
 
-                component("Teriyaki Chicken", 100, "./IMAGE/sandwich1.png", 1, "An Asian classic gourmet made with a flavorful blend of tender chicken pieces dressed lightly with teriyaki sauce.");
-                component("Teriyaki Chicken", 100, "./IMAGE/sandwich1.png", 1, "An Asian classic gourmet made with a flavorful blend of tender chicken pieces dressed lightly with teriyaki sauce.");
-                component("Teriyaki Chicken", 100, "./IMAGE/sandwich1.png", 1, "An Asian classic gourmet made with a flavorful blend of tender chicken pieces dressed lightly with teriyaki sauce.");
-                component("sandwich", 100, "./IMAGE/sandwich1.png", 1, "blablabla");
-                component("sandwich", 100, "./IMAGE/sandwich1.png", 1, "blablabla");
-                component("sandwich", 100, "./IMAGE/sandwich1.png", 1, "blablabla");
-                component("sandwich", 100, "./IMAGE/sandwich1.png", 1, "blablabla");
+                $result = $database->getData();
+                while ($row = mysqli_fetch_assoc($result)){
+                  component($row['product_name'], $row['product_price'], $row['product_image'], $row['id'], $row['product_detail']);
+                }
 
-                component("sandwich", 100, "./IMAGE/sandwich1.png", 1, "blablabla");
-
-                component("sandwich", 100, "./IMAGE/sandwich1.png", 1, "blablabla");
-
-
+                //  $server = "localhost";
+                //  $username = "root";
+                //  $password = "";
+                //  $dbname = "localhost";
+                //  $conn = mysqli_connect($server,$username,$password,$dbname);
+                //  $sql = "SELECT * FROM dbtable";
+                //  $result = mysqli_query($conn,$sql);   
+                //  $queryResults = mysqli_num_rows($result);    //get the rows of table
+                
+                //  if($queryResults > 0){
+                //    while($row = mysqli_fetch_assoc($result)){ // get data by row and sub into row
+                //   echo " 
+                //           <div>
+                //           " . row['row_name'] . "
+                //           </div>
+                //            ";
+                //    }
+                //  }  
 
 
       ?>        
