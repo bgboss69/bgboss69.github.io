@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+
+<widget
+    android-versionCode = '1'
+    id = 'com.iBuildThings.clock'
+    version = '1.0.0'
+    xmlns = 'https://www.w3.org/ns/widgets'>
+    
+    <name>Clock</name>
+    <description>Clock</description>
+    <author>iBuildThings</author>
+
+    <preference name = 'orientation' value = 'portrait'/>
+</widget>

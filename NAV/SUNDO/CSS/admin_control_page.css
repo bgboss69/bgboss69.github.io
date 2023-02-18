@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #FAECD6;
+  flex-wrap: wrap;
+  border-bottom: solid 3px #820000;
+}
+.header .left {
+  width: 20%;
+}
+.header .left img {
+  height: 50px;
+}
+.header .middle {
+  width: 55%;
+}
+.header .right {
+  font-size: 30px;
+  width: 25%;
+}
+.header .right a {
+  margin: 10px;
+  float: right;
+  color: #5F7161;
+  position: relative;
+}
+.header .right a span {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+}
+.header .right .logo_user {
+  border: 3px solid white;
+  border-radius: 20px;
+  padding: 0 10px;
+  margin: 5px 0;
+}
+.main {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #FAECD6;
+}
+.main .product_box {
+  margin-top: 10px;
+  width: 90vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #820000;
+  background-color: #FAECD6;
+  border: solid 3px #820000;
+  font-size: 16px;
+  line-height: 50px;
+  overflow: hidden;
+  text-align: center;
+}
+.main .product_box .product_id {
+  width: 2vw;
+  height: 50px;
+  background-color: #FAECD6;
+}
+.main .product_box .product_name {
+  width: 10vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .product_box .product_price {
+  width: 5vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .product_box .product_image {
+  width: 23vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .product_box .product_detail {
+  width: 35vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .product_box .product_category {
+  width: 5vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .product_box .form {
+  width: 10vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-left: solid 3px #820000;
+}
+.main .product_box .form form {
+  height: 50px;
+  width: 10vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main .product_box .form form button {
+  width: 4.5vw;
+  height: 50px;
+  background-color: #FAECD6;
+  color: #820000;
+  border: solid 3px #820000;
+}
+.main .product_box .form form button:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.main .order_box {
+  margin-top: 10px;
+  width: 90vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #820000;
+  background-color: #FAECD6;
+  border: solid 3px #820000;
+  font-size: 16px;
+  line-height: 50px;
+  overflow: hidden;
+  text-align: center;
+}
+.main .order_box .user_id {
+  width: 20vw;
+  height: 50px;
+  background-color: #FAECD6;
+}
+.main .order_box .order_id {
+  width: 20vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .order_box .method {
+  width: 20vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .order_box .status {
+  width: 20vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .order_box .form {
+  width: 10vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-left: solid 3px #820000;
+}
+.main .order_box .form form {
+  height: 50px;
+  width: 10vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main .order_box .form form button {
+  width: 4.5vw;
+  height: 50px;
+  background-color: #FAECD6;
+  color: #820000;
+  border: solid 3px #820000;
+}
+.main .order_box .form form button:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.main .rate_box {
+  margin-top: 10px;
+  width: 90vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #820000;
+  background-color: #FAECD6;
+  border: solid 3px #820000;
+  font-size: 16px;
+  line-height: 50px;
+  overflow: hidden;
+  text-align: center;
+}
+.main .rate_box .user_id {
+  width: 15vw;
+  height: 50px;
+  background-color: #FAECD6;
+}
+.main .rate_box .product_id {
+  width: 15vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .rate_box .rating {
+  width: 15vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .rate_box .comment {
+  width: 40vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .rate_box .form {
+  width: 5vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-left: solid 3px #820000;
+}
+.main .rate_box .form form {
+  height: 50px;
+  width: 5vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main .rate_box .form form button {
+  width: 4.5vw;
+  height: 50px;
+  background-color: #FAECD6;
+  color: #820000;
+  border: solid 3px #820000;
+}
+.main .rate_box .form form button:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.main .user_box {
+  margin-top: 10px;
+  width: 90vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #820000;
+  background-color: #FAECD6;
+  border: solid 3px #820000;
+  font-size: 16px;
+  line-height: 50px;
+  overflow: hidden;
+  text-align: center;
+}
+.main .user_box .user_id {
+  width: 20vw;
+  height: 50px;
+  background-color: #FAECD6;
+}
+.main .user_box .user_name {
+  width: 20vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .user_box .user_password {
+  width: 20vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .user_box .user_PIN {
+  width: 20vw;
+  height: 50px;
+  background-color: #FAECD6;
+  border-left: solid 3px #820000;
+}
+.main .user_box .form {
+  width: 10vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-left: solid 3px #820000;
+}
+.main .user_box .form form {
+  height: 50px;
+  width: 10vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main .user_box .form form button {
+  width: 4.5vw;
+  height: 50px;
+  background-color: #FAECD6;
+  color: #820000;
+  border: solid 3px #820000;
+}
+.main .user_box .form form button:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.top_title {
+  display: inline-block;
+  width: 50vw;
+  text-align: center;
+  color: #820000;
+  margin-top: 30px;
+}
+/*==footer==*/
+.footer-container {
+  background-color: #820000;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: single day;
+}
+.footer-social {
+  width: 25%;
+}
+.footer-social a {
+  color: white;
+  padding: 0 20px;
+  font-size: 25px;
+}
+.footer-middle {
+  width: 50%;
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+}
+.footer-middle h4 {
+  color: white;
+}
+.footer-contact-us {
+  font-size: 20px;
+  width: 25%;
+  padding: 0 20px;
+  text-align: right;
+}
+.footer-contact-us a {
+  color: white;
+}

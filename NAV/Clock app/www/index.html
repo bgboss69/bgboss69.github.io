@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Clock</title>
+  </head>
+
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #333;
+}
+
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+}
+
+.toggle {
+  width: 100px;
+  padding: 8px 12px;
+  cursor: pointer; 
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.container2{
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.clock {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+  background-color: #e74c3c;
+}
+
+.center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.center-point::after {
+  content: '';
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+    font-size: 60px;
+    flex: 2;
+}
+
+.date {
+    flex:1 ;
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
+}
+
+.btn{
+  width: 100px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+  transition: all 1s;
+}
+
+.btn:hover{
+    background-color: white;
+    box-shadow: 0px 0px 10px 10px black inset;
+}
+
+
+/* --------------------- */
+form {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: 400px;
+}
+
+.input {
+  border: none;
+  color: #444;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  display: block;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: #d5d5d5;
+}
+
+.input:focus {
+  outline-color: rgb(123, 162, 253);
+}
+
+.todos {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.todos li {
+  border-top: 1px solid #e5e5e5;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  color: #444;
+}
+
+.todos li.completed {
+  color: #b6b6b6;
+  text-decoration: line-through;
+}
+
+small {
+  color: #b5b5b5;
+  margin-top: 3rem;
+  text-align: center;
+}
+  </style>
+  <body>
+    <!-- Inspired by this dribbble shot https://dribbble.com/shots/5958443-Alarm-clock -->
+<div style=" width:384px; ">
+    <!-- float:left; -->
+    
+
+    <div class="clock-container">
+      <div class="clock">
+        <div class="needle hour"></div>
+        <div class="needle minute"></div>
+        <div class="needle second"></div>
+        <div class="center-point"></div>
+      </div>
+    </div>
+    <div class="container1" >
+      <div class="time" style="margin: 0 auto; text-align: center;"></div>
+      <div class="date" style="margin: 0 auto; text-align: center;"></div>
+    </div>
+    <div class="container2">
+      <button class="toggle">Dark mode</button>
+      <button class="btn" onclick="myFunction()">Start</button>
+    </div>
+    <div style="text-align: center; ">
+      <h1>今日完成清单 </h1>
+    </div>
+    <form id="form" >
+      <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off">
+
+      <ul class="todos" id="todos"></ul>
+    </form>
+  </div>
+    
+</div>
+
+    <!-- code1 -->
+
+<!-- <input type="text" id="clock" />
+<button onclick="int=window.clearInterval(int)">停止</button> -->
+    <!-- code2 -->
+
+<!-- <p>点击按钮，在等待 3 秒后弹出 "Hello"。</p>
+<button onclick="myFunction()">点我</button> -->
+
+
+
+
+
+
+
+
+<Script>
+
+ 
+
+let a = new Audio('./卡農(Canon)_-_鋼琴版_(_256kbps_cbr_).mp3')
+function myFunction()
+{
+  let x = parseInt(prompt(`输入时间(min)`))
+  let y = x*1000*60//3000=3s
+
+	setTimeout(function(){
+        a.play()
+    },y); 
+}
+
+// <!-- code1 -->
+// var int=self.setInterval("clock()",1000);
+// function clock()
+// {
+//     var d=new Date();
+//     var t=d.toLocaleTimeString();
+//     document.getElementById("clock").value=t;
+// }
+
+// <!-- code2 -->
+// function myFunction()
+// {
+// 	setTimeout(function(){alert("Hello")},3000); //3000=3s
+// }
+
+
+
+const hourEl = document.querySelector('.hour')
+const minuteEl = document.querySelector('.minute')
+const secondEl = document.querySelector('.second')
+const timeEl = document.querySelector('.time')
+const dateEl = document.querySelector('.date')
+const toggle = document.querySelector('.toggle')
+
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+toggle.addEventListener('click', (e) => {
+    const html = document.querySelector('html')
+    if (html.classList.contains('dark')) {
+        html.classList.remove('dark')
+        e.target.innerHTML = 'Dark mode'
+    } else {
+        html.classList.add('dark')
+        e.target.innerHTML = 'Light mode'
+    }
+})
+
+function setTime() {
+    const time = new Date();
+    const month = time.getMonth()
+    const day = time.getDay()
+    const date = time.getDate()
+    const hours = time.getHours()
+    const hoursForClock = hours >= 13 ? hours % 12 : hours;
+    const minutes = time.getMinutes()
+    const seconds = time.getSeconds()
+    const ampm = hours >= 12 ? 'PM' : 'AM'
+
+    hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 12, 0, 360)}deg)`
+    minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 60, 0, 360)}deg)`
+    secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 60, 0, 360)}deg)`
+
+    timeEl.innerHTML = `${hoursForClock}:${minutes < 10 ? `0${minutes}` : minutes} ${ampm}`
+    dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`
+}
+
+// StackOverflow https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+const scale = (num, in_min, in_max, out_min, out_max) => {
+    return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+setTime()
+
+setInterval(setTime, 1000)
+
+
+
+
+// --------------------------------------------------
+const form = document.getElementById('form')
+const input = document.getElementById('input')
+const todosUL = document.getElementById('todos')
+
+const todos = JSON.parse(localStorage.getItem('todos'))
+
+if(todos) {
+    todos.forEach(todo => addTodo(todo))
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    addTodo()
+})
+
+function addTodo(todo) {
+    let todoText = input.value
+
+    if(todo) {
+        todoText = todo.text
+    }
+
+    if(todoText) {
+        const todoEl = document.createElement('li')
+        if(todo && todo.completed) {
+            todoEl.classList.add('completed')
+        }
+
+        todoEl.innerText = todoText
+
+        todoEl.addEventListener('click', () => {
+            todoEl.classList.toggle('completed')
+            updateLS()
+        }) 
+
+        todoEl.addEventListener('contextmenu', (e) => {
+            e.preventDefault()
+
+            todoEl.remove()
+            updateLS()
+        }) 
+
+        todosUL.appendChild(todoEl)
+
+        input.value = ''
+
+        updateLS()
+    }
+}
+
+function updateLS() {
+    todosEl = document.querySelectorAll('li')
+
+    const todos = []
+
+    todosEl.forEach(todoEl => {
+        todos.push({
+            text: todoEl.innerText,
+            completed: todoEl.classList.contains('completed')
+        })
+    })
+
+    localStorage.setItem('todos', JSON.stringify(todos))
+}
+// -----------------------------------------------
+   
+    
+
+    // let btn = document.querySelector(`#sos`)
+    // let a = new Audio('./img-audio/Emergency Alarm Tone.mp3')
+    // btn.onclick = function (){
+    //     a.play()
+    // }
+
+    // let btn2 = document.querySelector(`#stop`)
+    // btn2.onclick = function (){
+    //     a.pause()
+    // }
+</Script>
+
+</body>
+</html>

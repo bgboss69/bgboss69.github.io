@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- making responsive------avaliable show in mobile and destop -->
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E3 INFORMATION SDN BHD-product</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/product_style.css">
+    <!-- jQuery------ -->
+    <script src="JS/jQuery.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <!-- light-slider-js------ -->
+    <script src="JS/lightslider.js"></script>
+
+    <!-- fav-icon -->
+    <link rel="shortcut icon" href="image/fav_icon.png">
+    <!-- using FontAwesome-For-Icons -->
+    <script src="https://kit.fontawesome.com/4383c4d46f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- navigation -->
+    <nav class="nav">
+
+        <!-- social-link-and-phone-number -->
+        <div class="social-call">
+            <!-- social-links -->
+            <div class="social">
+                <span>|| Contact ||</span>
+                <a href="https://www.facebook.com/E3Information/" title="Facebook page of E3 Information Sdn Bhd"><i class="fa-brands fa-facebook"></i></a>
+                <a href="http://my.e3information.com/" title="Website of E3 Information Sdn Bhd"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.google.com/search?q=e3+information&rlz=1C1CHZN_enMY983MY983&tbm=lcl&ei=cQ-RYproA_6OseMPnZWCsAc&oq=e3+information&gs_l=psy-ab.12...0.0.0.99873.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.2tqjVBHecYg#" title="location of E3 Information Sdn Bhd"><i class="fa-solid fa-map-location"></i></a>
+                <a href="tel:069100080" title=" Call E3 Information Sdn Bhd : +606-9100080"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFrJZBZWbzgJKPfQTVjqLdcSFCZsxsWJdrcFdDbqlSMgXktdZQgSZlWbHVgPDFVBJWBHxM" title="Send E3 Information Sdn Bhd an Email : marketing@e3information.com"> <i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <span>|| Contact ||</span>
+            </div>
+        </div>
+
+        <!-- menu - bar ---------------- -->
+        <div class="navigation">
+            <!-- logo -->
+            <a href="#" class="logo">
+                <img src="image/logo.png">
+            </a>
+            <!-- menu icon -->
+            <div class="menu-toggle">
+                <a href="javascript:void(0)" class="menu-icon">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </a>
+            </div>
+            <!-- menu -->
+            <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="developer.html">Developer profile</a></li>
+            </ul>
+            <!-- rignt menu -->
+            <div class="right-menu">
+                <!-- search -->
+                <a href="javascript:void(0)" class="search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+
+                <!-- user -->
+                <a href="javascript:void(0)" class="user">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+
+                <!-- shopping-cart -->
+                <a href="shopping-cart.html">
+                    <i class="fa fa-shopping-cart" aria-hidden="true">
+                        <!-- number of product in cart -->
+                        <span class="num-cart-product">0</span>
+                    </i>
+                </a>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- search bar--------------- -->
+    <div class="search-bar">
+        <!-- search input -->
+        <div class="search-input">
+            <!-- input -->
+            <input type="text" placeholder="search for Product" />
+            <!-- cancel-btn -->
+            <a href="javascript:void(0)" class="search-cancel">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- login-and-sign-up-form -->
+    <div class="form">
+        <!-- login -->
+        <div class="login-form">
+
+            <!-- cancel-btn -->
+            <a href="javascript:void(0)" class="form-cancel">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+
+            <!-- heading -->
+            <strong>Log In</strong>
+            <!-- inputs -->
+            <form>
+                <input type="email" placeholder="Example@gmail.com" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <!--submit-btn -->
+                <input type="submit" value="Log In">
+            </form>
+            <!-- forget-and-sign-up-btn -->
+            <div class="form-btns">
+                <a href="#" class="forget">Forget Your password?</a>
+                <a href="javascript:void(0)" class="sign-up-btn">Create Account</a>
+            </div>
+
+        </div>
+
+        <!-- sign up -->
+        <div class="sign-up-form">
+
+            <!-- cancel-btn -->
+            <a href="javascript:void(0)" class="form-cancel">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+
+            <!-- heading -->
+            <strong>Sign up</strong>
+            <!-- inputs -->
+            <form>
+                <input type="text" placeholder="Full Name" name="fullname" required>
+                <input type="email" placeholder="Example@gmail.com" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <!--submit-btn -->
+                <input type="submit" value="Sign Up">
+            </form>
+            <!-- forget-and-sign-up-btn -->
+            <div class="form-btns">
+                <a href="javascript:void(0)" class="Got-Account">Already Have Account?</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Header Start -->
+    <div class="Header">
+        <div class="header-details">
+            <h3>Product</h3>
+            <div class="header-details-text">
+                <a href="home.html">Home </a>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <a href="product.html">Product</a>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- product --------------------->
+    <section class="product">
+
+        <!--heading-------->
+        <div class="product-heading">
+            <strong>IT Product</strong>
+            <p>We Provide You Good IT PRODUCTS</p>
+        </div>
+
+        <!--products----------------------->
+        <div class="product-container">
+
+            <!--product-box-1---------->
+            <div class="product-box-1">
+                <div class="product-box">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart---->
+                        <a href="shopping-cart.html" class="add-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        <!--img------>
+                        <img src="image/p-1.webp">
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="product-detail.html" class="p-name">HP Laptop - 15s-eq1018au</a>
+                        <span class="p-price">RM1,699.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--product-box-2---------->
+            <div class="product-box-2">
+                <div class="product-box">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart---->
+                        <a href="shopping-cart.html" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                        <!--img------>
+                        <img src="image/p-2.webp">
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="#" class="p-name">HP DeskJet Ink Advantage 2336 All-in-One Printer</a>
+                        <span class="p-price">RM199.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--product-box-3---------->
+            <div class="product-box">
+                <div class="product-box-3">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart---->
+                        <a href="shopping-cart.html" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                        <!--img------>
+                        <img src="image/p-3.webp">
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="#" class="p-name">HP Slim Desktop S01-pF2007d Bundle PC</a>
+                        <span class="p-price">RM2,459.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--product-box-4---------->
+            <div class="product-box">
+                <div class="product-box-4">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart---->
+                        <a href="shopping-cart.html" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                        <!--img------>
+                        <img src="image/p-4.jpg">
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="#" class="p-name">Acer Aspire C24-420-3150W10 All-in-one Desktop</a>
+                        <span class="p-price">RM2,499.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--product-box-5---------->
+            <div class="product-box">
+                <div class="product-box-5">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart---->
+                        <a href="shopping-cart.html" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                        <!--img------>
+                        <img src="image/p-5.jpg">
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="#" class="p-name">Acer Nitro N50-120-5700W11D Gaming Desktop</a>
+                        <span class="p-price">RM4,999.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--product-box-6---------->
+            <div class="product-box">
+                <div class="product-box-6">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart---->
+                        <a href="shopping-cart.html" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                        <!--img------>
+                        <img src="image/p-6.png">
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="#" class="p-name">Canon MAXIFY GX7070</a>
+                        <span class="p-price">RM2,699.00</span>
+                    </div>
+                </div>
+            </div>
+            <!--product-box-7---------->
+            <div class="product-box">
+                <div class="product-box-7">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart---->
+                        <a href="shopping-cart.html" class="add-cart"><i class="fas fa-shopping-cart"></i></a>
+                        <!--img------>
+                        <img src="image/p-7.png">
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="#" class="p-name">Asus RT-AC59U</a>
+                        <span class="p-price">RM475.00</span>
+                    </div>
+                </div>
+            </div>
+            <!--product-box-8---------->
+            <div class="product-box">
+                <div class="product-box-8">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart---->
+                        <a href="shopping-cart.html" class="add-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        <!--img------>
+                        <img src="image/p-8.png">
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="#" class="p-name">HUAWEI MatePad 10.4-inch 2022 LTE </a>
+                        <span class="p-price">RM1,599.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer-container-1">
+            <div class="footer-container-2">
+                <div class="footer-container-3">
+                    <div class="footer-text">
+                        <h5>Get In Touch</h5>
+                        <p><i class="fa fa-map-marker-alt "></i>NO. 17-02, BLOCK C, AUSTIN V SQUARE, Jalan Austin Perdana 2, Taman Austin Perdana, 81100 Johor Bahru, Johor</p>
+                        <p><i class="fa fa-phone-alt "></i>+606 -9100 080</p>
+                        <p><i class="fa fa-envelope "></i>marketing@e3information.com</p>
+                        <div class="footer-icon">
+                            <a href="https://www.facebook.com/E3Information/" title="Facebook page of E3 Information Sdn Bhd"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="http://my.e3information.com/" title="Website of E3 Information Sdn Bhd"><i class="fa-solid fa-globe"></i></a>
+                            <a href="https://www.google.com/search?q=e3+information&rlz=1C1CHZN_enMY983MY983&tbm=lcl&ei=cQ-RYproA_6OseMPnZWCsAc&oq=e3+information&gs_l=psy-ab.12...0.0.0.99873.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.2tqjVBHecYg#" title="location of E3 Information Sdn Bhd"><i class="fa-solid fa-map-location"></i></a>
+                            <a href="tel:069100080" title=" Call E3 Information Sdn Bhd : +606-9100080"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
+                            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFrJZBZWbzgJKPfQTVjqLdcSFCZsxsWJdrcFdDbqlSMgXktdZQgSZlWbHVgPDFVBJWBHxM" title="Send E3 Information Sdn Bhd an Email : marketing@e3information.com"> <i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Copyright Section -->
+    <div class="footer-copyright-section">
+        <div class="footer-copyright">
+            Copyright © 2022 - Developed by UTHM GROUP 5
+        </div>
+    </div>
+    <!-- /Footer Copyright Section -->
+
+    <!-- script   -->
+    <script type="text/javascript">
+        /*------- For search bar-------*/
+        $(document).on('click', '.search', function() {
+            $('.search-bar').addClass('search-bar-active')
+        });
+
+        $(document).on('click', '.search-cancel', function() {
+            $('.search-bar').removeClass('search-bar-active')
+        });
+
+        /*------- login-sign-up-form-------*/
+        $(document).on('click', '.user', function() {
+            $('.form').addClass('login-active')
+        });
+
+        $(document).on('click', '.form-cancel', function() {
+            $('.form').removeClass('login-active').removeClass('sign-up-active')
+        });
+
+        /*------- create Account-------*/
+        $(document).on('click', '.sign-up-btn', function() {
+            $('.form').addClass('sign-up-active').removeClass('login-active')
+        });
+
+        $(document).on('click', '.Got-Account', function() {
+            $('.form').addClass('login-active').removeClass('sign-up-active')
+        });
+
+        // fix navigation
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('fix-nav')
+            } else {
+                $('.nav').removeClass('fix-nav')
+            }
+        });
+
+        // --For-make-Menu-responsive------------
+        $(document).ready(function() {
+            $('.menu-toggle').click(function() {
+                $('.menu-toggle').toggleClass('active')
+                $('.navigation').toggleClass('active')
+            })
+        });
+    </script>
+
+</body>
+
+</html>
