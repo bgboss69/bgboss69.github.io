@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My GitHub Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    a.button {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <h1>My project</h1>
-    <br>
-    <button><a href="./NAV/e3 inofrmation bhd(year1 sem2)/home.html">E3 INFORMATION SDN BHD(year1 sem2)(no fuction)</a></button>
-    <button><a href="./NAV/my profile/index.html">my profile</a></button>
-    <button><a href="./NAV/Clock app/">Clock</a></button>
-    <button><a href="./NAV/merry christmas/merry christmas.html">merry christmas</a></button>
-    <button><a href="https://github.com/bgboss69/bgboss69.github.io/tree/main/NAV/SUNDO">SUNDO</a></button>
-    <button><a href="https://youtu.be/mq5hrq2oNe8">SUNDO video</a></button>
-    <!-- <button><a href="./NAV/HOME1/index.html">codejs</a></button>  -->
 
+  <h1>My GitHub Projects</h1>
+
+  <!-- 🔘 Static Buttons -->
+  <div class="button-container">
+    <a href="./NAV/e3 inofrmation bhd(year1 sem2)/home.html" class="button" target="_blank">E3 INFORMATION SDN BHD</a>
+    <a href="./NAV/my profile/index.html" class="button" target="_blank">My Profile</a>
+    <a href="./NAV/Clock app/" class="button" target="_blank">Clock</a>
+    <a href="./NAV/merry christmas/merry christmas.html" class="button" target="_blank">Merry Christmas</a>
+    <a href="https://github.com/bgboss69/bgboss69.github.io/tree/main/NAV/SUNDO" class="button" target="_blank">SUNDO Project</a>
+    <a href="https://youtu.be/mq5hrq2oNe8" class="button" target="_blank">SUNDO Video</a>
+    <!-- <a href="./NAV/HOME1/index.html" class="button" target="_blank">CodeJS (Coming Soon)</a> -->
+  </div>
+
+  <!-- 📦 Dynamic GitHub Projects -->
+  <h2 style="margin-top: 40px;">Public Repositories</h2>
+  <div class="button-container" id="repo-buttons"></div>
+
+  <script>
+    fetch('https://api.github.com/users/bgboss69/repos')
+      .then(response => response.json())
+      .then(repos => {
+        const container = document.getElementById('repo-buttons');
+        repos.forEach(repo => {
+          const link = document.createElement('a');
+          link.href = repo.html_url;
+          link.target = "_blank";
+          link.className = "button";
+          link.textContent = repo.name;
+          container.appendChild(link);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching GitHub repos:', error);
+      });
+  </script>
 
 </body>
 </html>
