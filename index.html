@@ -1,44 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Projects</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ching Kai Yuan | Projects & Resume</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f4f4f4;
+    * {
+      box-sizing: border-box;
     }
-    h1 {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
       color: #333;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1, h2 {
+      margin: 0;
+    }
+    main {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section {
+      margin-bottom: 40px;
     }
     .button-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
       margin-top: 20px;
     }
     a.button {
       display: inline-block;
-      padding: 10px 15px;
+      padding: 12px 18px;
       background-color: #007bff;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: bold;
       transition: background-color 0.3s ease;
     }
     a.button:hover {
       background-color: #0056b3;
     }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>My GitHub Projects</h1>
+  <header>
+    <h1>Ching Kai Yuan</h1>
+    <p>My GitHub Projects & Resume</p>
+  </header>
 
-  <!-- 🔘 Static Buttons -->
+  <main>
+    <!-- Resume Section -->
+    <div class="section">
+      <h2>📄 Resume</h2>
+      <div class="button-container">
+        <a href="Ching Kai Yuan Resume.pdf" target="_blank" class="button">🔍 View Resume</a>
+        <a href="Ching Kai Yuan Resume.pdf" download class="button">⬇️ Download Resume</a>
+      </div>
+      <iframe src="Ching Kai Yuan Resume.pdf"></iframe>
+    </div>
+
+    <!-- GitHub Repositories -->
+    <div class="section">
+      <h2>📦 GitHub Repositories</h2>
+      <div class="button-container" id="repo-buttons">Loading repositories...</div>
+    </div>
+  </main>
+<!-- 
   <div class="button-container">
     <a href="./NAV/e3 inofrmation bhd(year1 sem2)/home.html" class="button" target="_blank">E3 INFORMATION SDN BHD</a>
     <a href="./NAV/my profile/index.html" class="button" target="_blank">My Profile</a>
@@ -46,18 +91,13 @@
     <a href="./NAV/merry christmas/merry christmas.html" class="button" target="_blank">Merry Christmas</a>
     <a href="https://github.com/bgboss69/bgboss69.github.io/tree/main/NAV/SUNDO" class="button" target="_blank">SUNDO Project</a>
     <a href="https://youtu.be/mq5hrq2oNe8" class="button" target="_blank">SUNDO Video</a>
-    <!-- <a href="./NAV/HOME1/index.html" class="button" target="_blank">CodeJS (Coming Soon)</a> -->
-  </div>
-
-  <!-- 📦 Dynamic GitHub Projects -->
-  <h2 style="margin-top: 40px;">Public Repositories</h2>
-  <div class="button-container" id="repo-buttons"></div>
-
+  </div> -->
   <script>
     fetch('https://api.github.com/users/bgboss69/repos')
       .then(response => response.json())
       .then(repos => {
         const container = document.getElementById('repo-buttons');
+        container.innerHTML = ''; // Clear "Loading..." text
         repos.forEach(repo => {
           const link = document.createElement('a');
           link.href = repo.html_url;
@@ -69,6 +109,7 @@
       })
       .catch(error => {
         console.error('Error fetching GitHub repos:', error);
+        document.getElementById('repo-buttons').textContent = 'Failed to load repositories.';
       });
   </script>
 
