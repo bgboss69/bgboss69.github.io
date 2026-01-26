@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EPUB Viewer</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JSZip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- EPUB.js -->
+    <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+        }
+
+        #epubContainer {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        /* Floating horizontal menu */
+        #floatingMenu {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 99999;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        /* Hide menu buttons but keep toggle button visible */
+        #floatingMenu.hide .menuBtn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="epubContainer">
+    </div>
+
+    <div id="floatingMenu" class="d-flex flex-row gap-2">
+        <button id="toggleMenu" class="btn btn-secondary btn-sm">☰ Menu</button>
+        <a href="index.html" class="btn btn-primary btn-sm menuBtn">🏠 Home</a>
+        <button id="viewSummary" class="btn btn-primary btn-sm menuBtn">Summary</button>
+        <button id="toggleMode" class="btn btn-primary btn-sm menuBtn">Dark</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const file = params.get('file');
+            const summaryPath = params.get('summary');
+
+            const viewBtn = document.getElementById('viewSummary');
+            const toggleBtn = document.getElementById('toggleMode');
+            const toggleMenuBtn = document.getElementById('toggleMenu');
+            const floatingMenu = document.getElementById('floatingMenu');
+
+            let currentMode = localStorage.getItem(`epub-${file}-mode`) || 'day';
+            let rendition;
+
+            // Toggle menu visibility
+            toggleMenuBtn.onclick = () => {
+                floatingMenu.classList.toggle('hide');
+            };
+
+            function applyMode() {
+                if (!rendition) return;
+
+                if (!rendition.themes.registeredDay) {
+                    // Register themes once
+                    rendition.themes.register("dark", {
+                        body: { background: "#121212", color: "#e0e0e0", lineHeight: "1.6", padding: "0.5em", fontSize: "1.1em" }
+                    });
+                    rendition.themes.register("day", {
+                        body: { background: "#ffffff", color: "#000000", lineHeight: "1.6", padding: "0.5em", fontSize: "1.1em" }
+                    });
+                    rendition.themes.registeredDay = true;
+                }
+
+                if (currentMode === 'dark') {
+                    rendition.themes.select("dark");
+                    toggleBtn.textContent = "Day Mode";
+                } else {
+                    rendition.themes.select("day");
+                    toggleBtn.textContent = "Dark Mode";
+                }
+            }
+
+            if (!file) {
+                document.getElementById('epubContainer').innerHTML = "<p class='p-3'>No EPUB file specified.</p>";
+                document.querySelectorAll('.menuBtn').forEach(btn => btn.style.display = 'none');
+                return;
+            }
+
+            fetch(decodeURIComponent(file))
+                .then(res => res.arrayBuffer())
+                .then(buffer => {
+                    const book = ePub(buffer);
+                    const storedCfi = localStorage.getItem(`epub-${file}-cfi`);
+                    rendition = book.renderTo("epubContainer", {
+                        width: "100%",
+                        height: "100%",
+                        flow: "scrolled",
+                        manager: "continuous"
+                    });
+
+                    if (storedCfi) rendition.display(storedCfi);
+                    else rendition.display();
+
+                    rendition.on("relocated", loc => {
+                        localStorage.setItem(`epub-${file}-cfi`, loc.start.cfi);
+                    });
+
+                    rendition.on("rendered", applyMode);
+
+                    toggleBtn.onclick = () => {
+                        currentMode = (currentMode === 'day') ? 'dark' : 'day';
+                        applyMode();
+                        localStorage.setItem(`epub-${file}-mode`, currentMode);
+                    };
+
+                    viewBtn.onclick = () => summaryPath ? window.open(summaryPath, "_blank") : alert("No summary available");
+                    editBtn.onclick = () => alert("Edit summary feature not implemented yet.");
+
+                    document.querySelectorAll('.menuBtn').forEach(btn => btn.style.display = 'block');
+
+                })
+                .catch(err => {
+                    document.getElementById('epubContainer').innerHTML = `<p class="p-3 text-danger"></p>`;
+                });
+        });
+    </script>
+
+</body>
+
+</html>
